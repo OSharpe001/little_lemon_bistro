@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
+
 import BookingForm from "./components/BookingForm";
+
 
 export default function BookingPage(props) {
 

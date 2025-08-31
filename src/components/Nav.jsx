@@ -1,7 +1,7 @@
-import hamburger from "../assets/images/hamburger.png";
-import close from "../assets/images/close.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+
+import { hamburger, close } from "../assets/images";
 
 export default function Nav(props) {
     const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -22,9 +22,10 @@ export default function Nav(props) {
                 <Link aria-label="On Click" onClick={mobileNavOpen?toggleMobileNav:null} to="/menu" className="nav-item">Menu</Link>
                 <Link aria-label="On Click" onClick={mobileNavOpen?toggleMobileNav:null} to="/booking" className="nav-item">Reservations</Link>
                 <Link aria-label="On Click" onClick={mobileNavOpen?toggleMobileNav:null} to="/order" className="nav-item">Order Online</Link>
-                {props.loggedIn.state?
-                <Link aria-label="On Click" onClick={mobileNavOpen?toggleMobileNav:null} to="/sign_out" className="nav-item">Logout</Link>
-                :<Link aria-label="On Click" onClick={mobileNavOpen?toggleMobileNav:null} to="/sign_in" className="nav-item">Login</Link>
+                {props.loggedIn.state ?
+                    <Link aria-label="On Click" onClick={mobileNavOpen?toggleMobileNav:null} to="/sign_out" className="nav-item">Logout</Link>
+                :
+                    <Link aria-label="On Click" onClick={mobileNavOpen?toggleMobileNav:null} to="/sign_in" className="nav-item">Login</Link>
                 }
             </nav>
         </>

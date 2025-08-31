@@ -1,5 +1,7 @@
-import entree from "../assets/images/entree.jpg";
 import { Link } from "react-router-dom";
+
+import { entree } from "../assets/images";
+
 
 export default function Hero() {
     return (

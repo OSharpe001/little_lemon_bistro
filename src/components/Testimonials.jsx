@@ -1,4 +1,4 @@
-import mock_profile_pic from "../assets/images/mock_profile_pic.png";
+import { mock_profile_pic } from "../assets/images";
 
 export default function Testimonials() {
     return (

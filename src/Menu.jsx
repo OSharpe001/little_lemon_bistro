@@ -15,6 +15,7 @@ import {
     Liquor
     } from "./components/menuItems";
 
+
 export default function Menu() {
     return (
         <section className="menu">

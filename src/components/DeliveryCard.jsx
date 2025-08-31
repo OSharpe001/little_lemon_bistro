@@ -1,4 +1,5 @@
-import {useReducer} from "react";
+import { useReducer } from "react";
+
 
 const reducer = (state, action) => {
   if (action.type === "add") return {amount: state.amount + 1};

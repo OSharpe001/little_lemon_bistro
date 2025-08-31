@@ -1,5 +1,5 @@
 import CustomerInfoForm from "./CustomerInfoForm";
-import React, { useState } from "react";
+import { useState } from "react";
 
 export default function BookingForm(props) {
 

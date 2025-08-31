@@ -1,7 +1,5 @@
-import greek_salad from "../assets/images/greek_salad.jpg";
-import bruchetta from "../assets/images/bruchetta.png";
-import lemon_dessert from "../assets/images/lemon_dessert.jpg";
-import moped_icon from "../assets/images/moped_icon_option.png";
+import { greek_salad, bruchetta, lemon_dessert, moped_icon } from "../assets/images";
+
 
 export default function Specials() {
     return (
