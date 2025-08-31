@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 
-import About from "./components/About";
-import Hero from "./components/Hero";
-import Specials from "./components/Specials";
-import Testimonials from "./components/Testimonials";
+import {
+    About,
+    Hero,
+    Specials,
+    Testimonials
+} from "../components";
 
 
 export default function Homepage() {

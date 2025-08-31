@@ -1,4 +1,4 @@
-export default function CustomerInfoForm(props) {
+export default function CustomerInfoForm({ info }) {
 
   return (
     <section className="form customer-info">
@@ -8,12 +8,12 @@ export default function CustomerInfoForm(props) {
         type="text"
         id="first-name"
         name="first-name"
-        value={props.info.firstName}
+        value={info.firstName}
         placeholder="First name"
-        onChange={props.info.handleFirstNameChange}
-        onBlur={props.info.handleFirstNameChange}
+        onChange={info.handleFirstNameChange}
+        onBlur={info.handleFirstNameChange}
         />
-        {props.info.firstNameError?<p className="error-message">{props.info.firstNameError}</p>:null}
+        {info.firstNameError?<p className="error-message">{info.firstNameError}</p>:null}
 
         <label htmlFor="last-name">Last Name <sup>*</sup></label>
         <input
@@ -21,11 +21,11 @@ export default function CustomerInfoForm(props) {
         id="last-name"
         name="last-name"
         placeholder="Last name"
-        value={props.info.lastName}
-        onChange={props.info.handleLastNameChange}
-        onBlur={props.info.handleLastNameChange}
+        value={info.lastName}
+        onChange={info.handleLastNameChange}
+        onBlur={info.handleLastNameChange}
         />
-        {props.info.lastNameError?<p className="error-message">{props.info.lastNameError}</p>:null}
+        {info.lastNameError?<p className="error-message">{info.lastNameError}</p>:null}
 
         <label htmlFor="email">Email <sup>*</sup></label>
         <input
@@ -33,11 +33,11 @@ export default function CustomerInfoForm(props) {
         id="email"
         name="email"
         placeholder="little@lemon.com"
-        value={props.info.email}
-        onChange={props.info.handleEmailChange}
-        onBlur={props.info.handleEmailChange}
+        value={info.email}
+        onChange={info.handleEmailChange}
+        onBlur={info.handleEmailChange}
         />
-        {props.info.emailError?<p className="error-message">{props.info.emailError}</p>:null}
+        {info.emailError?<p className="error-message">{info.emailError}</p>:null}
 
         <label htmlFor="phone">Phone Number <sup>*</sup></label>
         <input
@@ -45,11 +45,11 @@ export default function CustomerInfoForm(props) {
         id="phone"
         name="phone"
         placeholder="(123) 456-7890"
-        value={props.info.phone}
-        onChange={props.info.handlePhoneChange}
-        onBlur={props.info.handlePhoneChange}
+        value={info.phone}
+        onChange={info.handlePhoneChange}
+        onBlur={info.handlePhoneChange}
         />
-        {props.info.phoneError?<p className="error-message">{props.info.phoneError}</p>:null}
+        {info.phoneError?<p className="error-message">{info.phoneError}</p>:null}
 
     </section>
   );

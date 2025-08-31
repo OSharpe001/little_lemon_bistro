@@ -1,7 +1,6 @@
-export default function ConfirmedDelivery(props) {
-
-    const confirmedCustomer = props.data;
-    const confirmedOrder = props.data.order;
+export default function ConfirmedDelivery({ data, userName }) {
+    const confirmedCustomer = data;
+    const confirmedOrder = data.order;
 
     const name = confirmedCustomer["first-name"]+" "+confirmedCustomer["last-name"];
     const email = confirmedCustomer.email;
@@ -15,7 +14,7 @@ export default function ConfirmedDelivery(props) {
             <h1>Congrats!</h1>
             <p>Your order is being prepared, now!</p>
             <section>
-                {props.userName?
+                {userName?
                     <>
                         <p>Your order of:</p>
                         {confirmedOrder.map((item) =>item[1]>0? <p key={item[0]}><span className="confirmed-res-info">{item[1]}- {item[0]}</span></p>:null)}
@@ -37,7 +36,7 @@ export default function ConfirmedDelivery(props) {
                                 {deliveryCity}, {deliveryState}
                             </span>
                         </p>
-                        <p>Your total is: <span className="confirmed-res-info">${props.data.price}</span></p>
+                        <p>Your total is: <span className="confirmed-res-info">${data.price}</span></p>
                     </>
                 }
             </section>

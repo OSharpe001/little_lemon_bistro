@@ -1,13 +1,22 @@
 import CustomerInfoForm from "./CustomerInfoForm";
 import { useState } from "react";
 
-export default function BookingForm(props) {
+
+export default function BookingForm({
+    availableTimes,
+    info,
+    setSeating,
+    userName,
+    submitForm,
+    seating,
+    dispatch
+}) {
 
     const [month, day, year] = (new Date()).toLocaleDateString('en-NY').split('/').map((number)=> number<10? "0"+number:number);
     const today = [year, month, day].join("-");
-    const timeSelection = props.availableTimes();
+    const timeSelection = availableTimes();
 
-    const [resTime, setResTime] = useState(props.availableTimes(today)[0]);
+    const [resTime, setResTime] = useState(availableTimes(today)[0]);
     const [resDate, setResDate] = useState(today);
     const [guests, setGuests] = useState("1");
     const [guestsError, setGuestsError] = useState("");
@@ -18,11 +27,11 @@ export default function BookingForm(props) {
     const [reservationTerms, setReservationTerms] = useState(false);
 
     const clearForm = () => {
-        props.info.setFirstName("");
-        props.info.setLastName("");
-        props.info.setEmail("");
-        props.info.setPhone("");
-        props.setSeating("Indoor")
+        info.setFirstName("");
+        info.setLastName("");
+        info.setEmail("");
+        info.setPhone("");
+        setSeating("Indoor")
         setResDate(today);
         setGuests("1");
         setOccasion("Occasion");
@@ -30,24 +39,24 @@ export default function BookingForm(props) {
         setReservationTerms(false);
     };
 
-    const disabled = !props.userName?(!!(guestsError) || !!(occasionError) || !!(requestsError) || !!(props.info.phoneError) || !!(props.info.emailError) || !!(props.info.firstNameError) || !!(props.info.lastNameError)):!!occasionError;
-    const gotRequiredInfo = !props.userName?(!!props.info.firstName && !!props.info.lastName && !!props.info.email && !!props.info.phone & !disabled):!disabled && occasion;
+    const disabled = !userName?(!!(guestsError) || !!(occasionError) || !!(requestsError) || !!(info.phoneError) || !!(info.emailError) || !!(info.firstNameError) || !!(info.lastNameError)):!!occasionError;
+    const gotRequiredInfo = !userName?(!!info.firstName && !!info.lastName && !!info.email && !!info.phone & !disabled):!disabled && occasion;
 
     const setSubmissionErrors = () => {
         if (occasion === "") {
             setOccasionError("What's the occasion?");
         };
-        if (props.info.firstName === ""){
-            props.info.setFirstNameError("All fields are required.");
+        if (info.firstName === ""){
+            info.setFirstNameError("All fields are required.");
         };
-        if (props.info.lastName === ""){
-            props.info.setLastNameError("All fields are required.");
+        if (info.lastName === ""){
+            info.setLastNameError("All fields are required.");
         };
-        if (props.info.email === ""){
-            props.info.setEmailError("All fields are required.");
+        if (info.email === ""){
+            info.setEmailError("All fields are required.");
         };
-        if (props.info.phone === ""){
-            props.info.setPhoneError("All fields are required.");
+        if (info.phone === ""){
+            info.setPhoneError("All fields are required.");
         };
     };
 
@@ -60,12 +69,12 @@ export default function BookingForm(props) {
             alert("Do you agree to our terms of service?");
         } else {
             setOccasionError("");
-            props.submitForm({
-                "first-name":props.info.firstName,
-                "last-name":props.info.lastName,
-                "email":props.info.email,
-                "phone":props.info.phone,
-                "seating":props.seating,
+            submitForm({
+                "first-name":info.firstName,
+                "last-name":info.lastName,
+                "email":info.email,
+                "phone":info.phone,
+                "seating":seating,
                 "date":resDate,
                 "time":resTime,
                 "guests":guests,
@@ -77,7 +86,7 @@ export default function BookingForm(props) {
     };
 
     const handleSeatingChange = (e) => {
-        props.setSeating(e.target.value);
+        setSeating(e.target.value);
     };
 
     const handleGuestsChange = (e) => {
@@ -97,7 +106,7 @@ export default function BookingForm(props) {
             return null
         } else { return (
             setResDate(e.target.value),
-            props.dispatch({type: "select", payload: e.target.value}))
+            dispatch({type: "select", payload: e.target.value}))
         };
     };
     const handleTimeChange = (e) => {
@@ -119,7 +128,7 @@ export default function BookingForm(props) {
         };
     };
 
-    const handleTermsChange = (e) => {
+    const handleTermsChange = () => {
         setReservationTerms(!reservationTerms);
     };
 
@@ -128,10 +137,10 @@ export default function BookingForm(props) {
         className="form"
         onSubmit={handleSubmit}
         >
-            {!props.userName?(
+            {!userName?(
                 <>
                 <h2>Personal Info</h2>
-                <CustomerInfoForm info={props.info}/>
+                <CustomerInfoForm info={info}/>
                 </>
                 )
                 :null
@@ -143,7 +152,7 @@ export default function BookingForm(props) {
             <input
                     type="radio"
                     id="indoor"
-                    checked={props.seating==="Indoor"}
+                    checked={seating==="Indoor"}
                     name="seating"
                     value="Indoor"
                     onChange={handleSeatingChange}
@@ -153,7 +162,7 @@ export default function BookingForm(props) {
                 <input
                     type="radio"
                     id="outdoor"
-                    checked={props.seating==="Outdoor"}
+                    checked={seating==="Outdoor"}
                     name="seating"
                     value="Outdoor"
                     onChange={handleSeatingChange}
@@ -225,7 +234,7 @@ export default function BookingForm(props) {
                 name="terms"
                 onChange={handleTermsChange}
                 />
-                    <label htmlFor="terms">Agree to our <a style={props.seating==="Indoor"?{color: "red"}:null} aria-label="On Click" className="terms-link" href="/terms">Terms of Service</a> <sup>*</sup>
+                    <label htmlFor="terms">Agree to our <a style={seating==="Indoor"?{color: "red"}:null} aria-label="On Click" className="terms-link" href="/terms">Terms of Service</a> <sup>*</sup>
                     </label>
             </div>
 

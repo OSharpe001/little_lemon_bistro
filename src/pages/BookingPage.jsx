@@ -1,9 +1,15 @@
 import { useState } from "react";
 
-import BookingForm from "./components/BookingForm";
+import { BookingForm } from "../components";
 
 
-export default function BookingPage(props) {
+export default function BookingPage({
+    info,
+    availableTimes,
+    dispatch,
+    submitForm,
+    userName
+}) {
 
     const [seating, setSeating] = useState("Indoor");
 
@@ -11,13 +17,13 @@ export default function BookingPage(props) {
         <section
         className={seating==="Indoor"?"booking-page indoor":"booking-page outdoor"}>
             <BookingForm
-                info={props.info}
-                availableTimes={props.availableTimes}
-                dispatch={props.dispatch}
-                submitForm={props.submitForm}
+                info={info}
+                availableTimes={availableTimes}
+                dispatch={dispatch}
+                submitForm={submitForm}
                 seating={seating}
                 setSeating={setSeating}
-                userName={props.userName}
+                userName={userName}
             />
         </section>
     );

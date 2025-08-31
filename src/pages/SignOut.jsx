@@ -1,11 +1,10 @@
 import { useEffect } from "react";
 
 
-export default function SignOut(props) {
-    const navigate = props.navigate;
+export default function SignOut({ navigate, setLoggedIn }) {
 
     useEffect(() => {
-        props.setLoggedIn({state:false, userName:""});
+        setLoggedIn({state:false, userName:""});
         setTimeout(navigate, 4000, "/");
     });
 

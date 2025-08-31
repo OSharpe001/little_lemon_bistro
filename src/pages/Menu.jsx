@@ -1,4 +1,4 @@
-import MenuCard from "./components/MenuCard";
+import { MenuCard } from "../components";
 import {
     Appetizers,
     Entrees,
@@ -13,7 +13,7 @@ import {
     Desserts,
     Beverages,
     Liquor
-    } from "./components/menuItems";
+    } from "../components/menuItems";
 
 
 export default function Menu() {

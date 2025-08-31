@@ -1,22 +1,29 @@
-import DeliveryCard from "./components/DeliveryCard";
-import { Menu } from "./components/deliveryItems";
+import { DeliveryCard } from "../components";
+import { Menu } from "../components/deliveryItems";
 
-export default function Order(props) {
 
-    const sum = props.orderUp.map(item => item[2]).reduce((total, number) => {return total+number}, 0);
+export default function Order({
+    setOrder,
+    orderUp,
+    setOrderUp,
+    userName,
+    submitForm,
+    submitMemberForm
+}) {
+    const sum = orderUp.map(item => item[2]).reduce((total, number) => {return total+number}, 0);
     const tax = sum*.0875;
-    const deliveryFee = sum === 0?0:props.userName?5+((Math.round(sum/100))*10):10+((Math.round(sum/100))*10);
+    const deliveryFee = sum === 0?0:userName?5+((Math.round(sum/100))*10):10+((Math.round(sum/100))*10);
     const total = sum+tax+deliveryFee;
     const disabled = (sum === 0);
 
-    const orderRundown = props.orderUp.map(item => item[1]>0?<p key={item[0]}>Item:{item[0]}-- Amount:{item[1]}-- Cost:{item[2]}</p>:null);
+    const orderRundown = orderUp.map(item => item[1]>0?<p key={item[0]}>Item:{item[0]}-- Amount:{item[1]}-- Cost:{item[2]}</p>:null);
 
     const handleOrderSubmit= () => {
-        if (!props.userName) {
-            props.submitForm(props.orderUp, props.userName, total.toFixed(2));
+        if (!userName) {
+            submitForm(orderUp, userName, total.toFixed(2));
         } else {
-            props.submitMemberForm({"order":props.orderUp, "price":total.toFixed(2)});
-            props.setOrderUp([]);
+            submitMemberForm({"order":orderUp, "price":total.toFixed(2)});
+            setOrderUp([]);
         };
     };
 
@@ -32,7 +39,7 @@ export default function Order(props) {
                                     name={item.name}
                                     description={item.description}
                                     price={item.price}
-                                    setOrder={props.setOrder}
+                                    setOrder={setOrder}
                                 />
                             </li>
                         )}
@@ -55,7 +62,7 @@ export default function Order(props) {
                             aria-label="On Click"
                             onClick={handleOrderSubmit}
                             >
-                                {!props.userName?"Delivery Address":"Confirm Order"}
+                                {!userName?"Delivery Address":"Confirm Order"}
                         </button>
                     </section>
                 </div>

@@ -4,7 +4,7 @@ import Nav from  "./Nav";
 import { logo } from "../assets/images";
 
 
-export default function Header(props) {
+export default function Header({ loggedIn, setLoggedIn, navigate }) {
 
     return (
         <header className="head">
@@ -16,9 +16,9 @@ export default function Header(props) {
                 />
             </Link>
             <Nav
-                loggedIn={props.loggedIn}
-                setLoggedIn={props.setLoggedIn}
-                navigate={props.navigate}
+                loggedIn={loggedIn}
+                setLoggedIn={setLoggedIn}
+                navigate={navigate}
                 />
         </header>
     );

@@ -3,7 +3,8 @@ import { useState } from "react";
 
 import { hamburger, close } from "../assets/images";
 
-export default function Nav(props) {
+
+export default function Nav({ loggedIn }) {
     const [mobileNavOpen, setMobileNavOpen] = useState(false);
     const toggleMobileNav = () => setMobileNavOpen(!mobileNavOpen);
 
@@ -22,7 +23,7 @@ export default function Nav(props) {
                 <Link aria-label="On Click" onClick={mobileNavOpen?toggleMobileNav:null} to="/menu" className="nav-item">Menu</Link>
                 <Link aria-label="On Click" onClick={mobileNavOpen?toggleMobileNav:null} to="/booking" className="nav-item">Reservations</Link>
                 <Link aria-label="On Click" onClick={mobileNavOpen?toggleMobileNav:null} to="/order" className="nav-item">Order Online</Link>
-                {props.loggedIn.state ?
+                {loggedIn.state ?
                     <Link aria-label="On Click" onClick={mobileNavOpen?toggleMobileNav:null} to="/sign_out" className="nav-item">Logout</Link>
                 :
                     <Link aria-label="On Click" onClick={mobileNavOpen?toggleMobileNav:null} to="/sign_in" className="nav-item">Login</Link>

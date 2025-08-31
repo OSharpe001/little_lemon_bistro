@@ -1,6 +1,7 @@
 import CustomerDeliveryForm from "./CustomerDeliveryForm";
 
-export default function CustomerPaymentForm(props) {
+
+export default function CustomerPaymentForm({ payment }) {
   return (
     <section className="form customer-payment">
 
@@ -10,11 +11,11 @@ export default function CustomerPaymentForm(props) {
         id="card-number"
         name="card-number"
         placeholder="1111 2222 1111 2222"
-        value={props.payment.cardNumber}
-        onChange={props.payment.handleCardNumberChange}
-        onBlur={props.payment.handleCardNumberChange}
+        value={payment.cardNumber}
+        onChange={payment.handleCardNumberChange}
+        onBlur={payment.handleCardNumberChange}
         />
-        {props.payment.cardNumberError?<p className="error-message">{props.payment.cardNumberError}</p>:null}
+        {payment.cardNumberError?<p className="error-message">{payment.cardNumberError}</p>:null}
 
         <label htmlFor="card-expiration">Card Expires <sup>*</sup></label>
         <input
@@ -22,11 +23,11 @@ export default function CustomerPaymentForm(props) {
         id="card-expiration"
         name="card-expiration"
         placeholder="MM/YY"
-        value={props.payment.cardExpiration}
-        onChange={props.payment.handleCardExpirationChange}
-        onBlur={props.payment.handleCardExpirationChange}
+        value={payment.cardExpiration}
+        onChange={payment.handleCardExpirationChange}
+        onBlur={payment.handleCardExpirationChange}
         />
-        {props.payment.cardExpirationError?<p className="error-message">{props.payment.cardExpirationError}</p>:null}
+        {payment.cardExpirationError?<p className="error-message">{payment.cardExpirationError}</p>:null}
 
         <label htmlFor="card-cvv">CVV <sup>*</sup></label>
         <input
@@ -34,13 +35,13 @@ export default function CustomerPaymentForm(props) {
         id="card-cvv"
         name="card-cvv"
         placeholder="123"
-        value={props.payment.cardCVV}
-        onChange={props.payment.handleCardCVVChange}
-        onBlur={props.payment.handleCardCVVChange}
+        value={payment.cardCVV}
+        onChange={payment.handleCardCVVChange}
+        onBlur={payment.handleCardCVVChange}
         />
-        {props.payment.cardCVVError?<p className="error-message">{props.payment.cardCVVError}</p>:null}
+        {payment.cardCVVError?<p className="error-message">{payment.cardCVVError}</p>:null}
 
-        <CustomerDeliveryForm delivery={props.payment}/>
+        <CustomerDeliveryForm delivery={payment}/>
     </section>
   );
 };

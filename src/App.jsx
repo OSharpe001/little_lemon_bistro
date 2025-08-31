@@ -1,20 +1,22 @@
-import HomePage from "./HomePage";
-import BookingPage from "./BookingPage.jsx";
-import AboutUs from "./AboutUs";
-import Menu from "./Menu.jsx";
-import Order from "./Order.jsx";
-import SignIn from "./SignIn.jsx";
-import SignUp from "./SignUp.jsx";
-import SignOut from "./SignOut.jsx";
-import ConfirmedBooking from "./ConfirmedBooking.jsx";
-import ConfirmedDelivery from "./ConfirmedDelivery.jsx";
-import OrderAddress from "./OrderAddress.jsx";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Terms from "./Terms";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { useReducer, useState } from "react";
 import { fetchAPI, submitAPI } from './api.js';
+
+import {
+    HomePage,
+    BookingPage,
+    AboutUs,
+    Menu,
+    Order,
+    SignIn,
+    SignUp,
+    SignOut,
+    ConfirmedBooking,
+    ConfirmedDelivery,
+    OrderAddress,
+    Terms
+} from "./pages";
+import { Footer, Header } from "./components";
 import {
     validateEmail,
     validatePhone,
@@ -26,7 +28,8 @@ import {
     validateCardCVV,
     } from "./utils";
 
-function App() {
+
+export default function App() {
   const [loggedIn, setLoggedIn] = useState({
                                             state:false,
                                             userName:"",
@@ -457,5 +460,3 @@ function App() {
         </>
   )
 }
-
-export default App
