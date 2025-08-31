@@ -18,7 +18,7 @@
                        "reservation-terms"
                        "sign-up"
                        "declare1"
-                       /* "specials" */
+                       "specials"
                        "declare2"
                        "testimonials"
                        "about"
@@ -233,7 +233,7 @@ input:focus:invalid {
   background-color: #495E57;
   margin: 0 0 3vh -16%;
   padding: 95px auto;
-  grid-column: 3;
+  grid-column: 3 / 11;
   max-width: 30ch;
   color:#EDEFEE;
   font-weight: bold;
@@ -283,8 +283,8 @@ section {
 }
 
 .specials {
-  /* grid-area: specials; */
-  /* grid-column: 3 / 11; */
+  grid-area: specials;
+  grid-column: 3 / 11;
   grid-row: 5;
   display: inline-flex;
   justify-content: space-between;
@@ -346,7 +346,7 @@ section {
 
 .testimonials {
   grid-area: testimonials;
-  grid-column: 3 / 13;
+  grid-column: 3 / 11;
   grid-row: 7;
   display: inline-flex;
   justify-content: space-between;
