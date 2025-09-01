@@ -10,7 +10,7 @@ import {
 
 export default function Homepage() {
     return (
-        <>
+        <section className="container">
             <Hero />
             <section className="declare1">
                 <h2>This week's specials!</h2>
@@ -22,6 +22,6 @@ export default function Homepage() {
             <Testimonials />
             <br/>
             <About />
-        </>
+        </section>
     );
 };

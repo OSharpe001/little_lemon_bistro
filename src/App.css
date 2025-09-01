@@ -6,23 +6,23 @@
 .container {
   display: grid;
   grid-template-areas: "header"
-                       "welcome-banner"
-                       "hero"
-                       "booking-page"
-                       "confirmed-booking"
-                       "sign-in"
-                       "sign-out"
-                       "order"
-                       "menu"
-                       "about-us"
-                       "reservation-terms"
-                       "sign-up"
-                       "declare1"
-                       "specials"
-                       "declare2"
-                       "testimonials"
-                       "about"
-                       "footer";
+    "welcome-banner"
+    "hero"
+    "booking-page"
+    "confirmed-booking"
+    "sign-in"
+    "sign-out"
+    "order"
+    "menu"
+    "about-us"
+    "reservation-terms"
+    "sign-up"
+    "declare1"
+    "specials"
+    "declare2"
+    "testimonials"
+    "about"
+    "footer";
   grid-template-columns: repeat(12, 1fr);
   column-gap: 1%;
   grid-template-rows: repeat(8);
@@ -38,11 +38,13 @@
 header {
   grid-area: header;
   grid-column: 3 / 11;
+  grid-row: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  margin: auto;
   padding: 20px 0;
+  width: 95%;
 }
 
 .nav-bar {
@@ -71,23 +73,26 @@ header {
   border-left: solid 2px #FFF;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-size: 220%;
   font-family: Markazi Text;
 }
 
-h4, h5, h6 {
+h4,
+h5,
+h6 {
   font-family: Markazi Text;
 }
 
 .hero {
   grid-area: hero;
-  grid-column: 1 / 13;
+  grid-column: 2 / 12;
   background-color: #495E57;
   display: inline-flex;
   justify-content: space-evenly;
-  width:96%;
-  margin: 0 -2% 5% 2%;
+  /* width:96%; */
+  /* margin: 0 -2% 5% 2%; */
 }
 
 .hero div h1 {
@@ -107,7 +112,7 @@ h4, h5, h6 {
 
 .hero img {
   margin-top: 30px;
-  margin-left:-7%;
+  margin-left: -7%;
   border-radius: 16px;
   position: absolute;
   width: 23vw;
@@ -117,11 +122,11 @@ h4, h5, h6 {
 .booking-page {
   grid-area: booking-page;
   grid-column: 3 / 11;
-  display:flex;
+  display: flex;
   align-items: center;
   text-align: center;
   width: 100%;
-  background-color:#EDEFEE;
+  background-color: #EDEFEE;
   border-radius: 16px;
 }
 
@@ -130,7 +135,7 @@ h4, h5, h6 {
   padding: 2vh 1vw;
   font-size: 16pt;
   font-weight: bold;
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -148,7 +153,8 @@ h4, h5, h6 {
   color: #EDEFEE;
 }
 
-.form input, select {
+.form input,
+select {
   font-size: 16pt;
   font-weight: bold;
   padding: 1vh 0;
@@ -156,7 +162,7 @@ h4, h5, h6 {
   min-width: 200px;
   text-align: center;
   justify-content: center;
-  border-radius:16px;
+  border-radius: 16px;
 }
 
 input:focus:invalid {
@@ -170,11 +176,14 @@ input:focus:invalid {
   border-left: solid 2px #FFF;
 }
 
-.form .button, label {
+.form .button,
+label {
   margin: 1vh 0 1vh;
 }
 
-.form select, #guests, #res-date {
+.form select,
+#guests,
+#res-date {
   width: 30vw;
 }
 
@@ -189,12 +198,12 @@ input:focus:invalid {
   grid-column: 3 / 11;
   font-size: 16pt;
   line-height: 1.5;
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   width: 100%;
-  background-color:#EDEFEE;
+  background-color: #EDEFEE;
   border-radius: 16px;
 }
 
@@ -210,14 +219,14 @@ input:focus:invalid {
   grid-area: sign-up;
   grid-column: 3 / 11;
   font-size: 16pt;
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   width: 100%;
-  margin:0;
+  margin: 0;
   padding: 0;
-  background-color:#EDEFEE;
+  background-color: #EDEFEE;
   border-radius: 16px;
 }
 
@@ -235,7 +244,7 @@ input:focus:invalid {
   padding: 95px auto;
   grid-column: 3 / 11;
   max-width: 30ch;
-  color:#EDEFEE;
+  color: #EDEFEE;
   font-weight: bold;
 }
 
@@ -288,7 +297,7 @@ section {
   grid-row: 5;
   display: inline-flex;
   justify-content: space-between;
-  text-align:left;
+  text-align: left;
   margin-bottom: 15vh;
 }
 
@@ -296,7 +305,7 @@ section {
   display: flex;
   flex-direction: column;
   background-color: #EDEFEE;
-  color:#333333;
+  color: #333333;
   border-radius: 16px 16px 0 0;
   margin: 0 5.5vw 0 0;
 }
@@ -336,7 +345,7 @@ section {
 }
 
 .moped {
-  width:18pt;
+  width: 18pt;
   margin: 0 0 -6px 10px;
 }
 
@@ -350,7 +359,6 @@ section {
   grid-row: 7;
   display: inline-flex;
   justify-content: space-between;
-  width: 80%;
   margin: 30px 0 200px;
 }
 
@@ -381,6 +389,7 @@ section {
 .about {
   grid-area: about;
   grid-column: 3 / 11;
+  grid-row: 8;
   display: inline-flex;
   justify-content: space-between;
 }
@@ -398,7 +407,7 @@ section {
 }
 
 .description article {
-  color:#333333;
+  color: #333333;
   background-color: white;
   font-family: KARLA REGULAR;
   font-size: 120%;
@@ -429,12 +438,14 @@ section {
 
 footer {
   grid-area: footer;
-  grid-column: 3 / 11;
+  grid-row: 8;
   display: flex;
+  flex-direction: row;
   text-align: center;
   justify-content: space-between;
   padding-top: 30px;
-  margin: 3vh 0;
+  margin: 3vh auto;
+  max-width: 83%;
 }
 
 .footer-logo {
@@ -452,15 +463,16 @@ footer {
 .footer-nav .nav-item {
   display: flex;
   justify-content: center;
-  margin: 2px 15px;
+  margin-top: 4px;
 }
 
-footer > nav > ul, p {
+footer>nav>ul,
+p {
   display: flex;
   flex-direction: column;
 }
 
-footer > nav > p {
+footer>nav>p {
   text-decoration: underline;
   padding-bottom: 15px;
   font-weight: bold;
@@ -471,7 +483,9 @@ footer > nav > p {
   font-weight: bold;
 }
 
-nav li, .nav-bar, .footer-nav {
+nav li,
+.nav-bar,
+.footer-nav {
   display: inline-flex;
   font-family: Markazi Text, KARLA REGULAR;
   font-weight: bold;
@@ -547,7 +561,7 @@ a {
   color: #333333;
 }
 
-.menu  {
+.menu {
   grid-area: menu;
   grid-column: 3 / 11;
   display: flex;
@@ -601,7 +615,7 @@ a {
   border-radius: 16pt;
 }
 
-.menu-list{
+.menu-list {
   list-style-type: none;
   margin: 0 0 2vh 0;
   border-radius: 0 0 16px 16px;
@@ -624,7 +638,7 @@ a {
 .menu-list li {
   display: inline-flex;
   width: 31vw;
-  margin: 0 1vw 0 ;
+  margin: 0 1vw 0;
 }
 
 .item {
@@ -669,8 +683,8 @@ a {
   }
 
   .order .menu-item img {
-    height:20vh;
-    width:20vw;
+    height: 20vh;
+    width: 20vw;
     border-radius: 16px;
   }
 
@@ -759,11 +773,9 @@ a {
   padding: 20px 0;
   border-radius: 16px;
   color: #333333;
-  background-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.22),
-    rgba(0, 0, 0, 0.53)
-  ), url("./assets/images/chef.jpg");
+  background-image: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.22),
+      rgba(0, 0, 0, 0.53)), url("./assets/images/chef.jpg");
   background-size: cover;
 }
 
@@ -814,7 +826,10 @@ a {
   font-size: 21pt;
 }
 
-#terms, #indoor, #outdoor, #same-as-billing {
+#terms,
+#indoor,
+#outdoor,
+#same-as-billing {
   margin: 2vh -11vw 1vh 6vw;
 }
 
@@ -828,7 +843,8 @@ a {
   color: #EDEFEE;
 }
 
-.nav-item:hover, .specials-a:hover {
+.nav-item:hover,
+.specials-a:hover {
   color: #333333;
   text-decoration: underline;
 }
@@ -846,11 +862,9 @@ sup {
 }
 
 .outdoor {
-  background-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.2)
-  ), url("./assets/images/outdoor_seating.jpg");
+  background-image: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.2)), url("./assets/images/outdoor_seating.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   color: #333333;
@@ -884,22 +898,22 @@ sup {
 @media (max-width: 900px) {
 
   header {
-      text-align: center;
+    text-align: center;
   }
 
   .nav-list {
-      max-width: 22.5vw;
-      min-width: 120px;
-      z-index: 11;
-      position: absolute;
-      right: 2vw;
-      top: 11.5vh;
-      text-align: left;
-      display: flex;
-      flex-direction: column;
-      border-radius: 16px;
-      background-color: #EDEFEE;
-      border: solid 2px #495E57;
+    max-width: 22.5vw;
+    min-width: 120px;
+    z-index: 11;
+    position: absolute;
+    right: 2vw;
+    top: 11.5vh;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    background-color: #EDEFEE;
+    border: solid 2px #495E57;
   }
 
   .nav-list .nav-item {
@@ -919,129 +933,130 @@ sup {
   }
 
   .logo {
-      margin: 0 3px 0 5px;
+    margin: 0 3px 0 5px;
   }
 
-  footer nav .nav-item, footer nav li {
-      font-size: 16pt;
-      background-color: #EDEFEE;
+  footer nav .nav-item,
+  footer nav li {
+    font-size: 16pt;
+    background-color: #EDEFEE;
   }
 
   .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .hero .greeting {
-      margin: 0;
-      text-align: center;
-      max-width: 100%;
+    margin: 0;
+    text-align: center;
+    max-width: 100%;
   }
 
   .greeting article {
-      width: 66vw;
-      margin: 0 auto;
-      margin-bottom: 2vh;
-      font-size: 16pt;
-      text-align: center;
+    width: 66vw;
+    margin: 0 auto;
+    margin-bottom: 2vh;
+    font-size: 16pt;
+    text-align: center;
   }
 
   .hero img {
-      min-width: 66vw;
-      margin: 5vh 0;
-      position: relative;
+    min-width: 66vw;
+    margin: 5vh 0;
+    position: relative;
   }
 
   .declare1 {
-      font-size: 1rem;
+    font-size: 1rem;
   }
 
   .declare1 .button {
-      margin: 0;
-      padding: 10px 3vw;
+    margin: 0;
+    padding: 10px 3vw;
   }
 
   .specials {
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
   }
 
   .specials article {
-      width: 100%;
-      padding-bottom: 2vh;
-      margin-bottom: 2vh;
-      border-radius: 16px 16px 0 0;
+    width: 100%;
+    padding-bottom: 2vh;
+    margin-bottom: 2vh;
+    border-radius: 16px 16px 0 0;
   }
 
   .specials a {
-      margin: 0;
-      padding: 0;
-      font-size: 18pt;
+    margin: 0;
+    padding: 0;
+    font-size: 18pt;
   }
 
   .specials-img {
-      border-radius: 16px 16px 0 0;
-      width: 100%;
+    border-radius: 16px 16px 0 0;
+    width: 100%;
   }
 
   .specials-a img {
-      margin: 0 0 -1vh 2vw;
-      width: 6vw;
+    margin: 0 0 -1vh 2vw;
+    width: 6vw;
   }
 
   .testimonials {
-      flex-direction: column;
-      margin-bottom: 15vh;
-      font-size: 16pt;
+    flex-direction: column;
+    margin-bottom: 15vh;
+    font-size: 16pt;
   }
 
   .about {
-      width: 100%;
-      flex-direction: column;
+    width: 100%;
+    flex-direction: column;
   }
 
   .description {
-      text-align: center;
-      max-width: max-content;
-      line-height: 1.5;
-      font-size: 16pt;
+    text-align: center;
+    max-width: max-content;
+    line-height: 1.5;
+    font-size: 16pt;
   }
 
   .description article {
-      width: 100%;
-      margin-bottom: 40vh;
+    width: 100%;
+    margin-bottom: 40vh;
   }
 
   .pic1 {
-      min-width: 60vw;
-      text-align: center;
-      margin: -30vh 0 0 -40vw;
+    min-width: 60vw;
+    text-align: center;
+    margin: -30vh 0 0 -40vw;
   }
 
   .pic2 {
-      min-width: 60vw;
-      position: relative;
+    min-width: 60vw;
+    position: relative;
   }
 
   footer {
-      font-size: small;
-      line-height: 1.5;
-      display: block;
+    font-size: small;
+    line-height: 1.5;
+    display: block;
   }
 
   .footer-logo {
-      width: 100px;
-      height: auto;
+    width: 100px;
+    height: auto;
   }
 
   nav li {
-      margin: 0 2px;
+    margin: 0 2px;
   }
 
-  footer > nav > p {
+  footer>nav>p {
     margin-top: 3vh;
     font-size: 16pt;
   }
@@ -1051,7 +1066,7 @@ sup {
     background-position: 45%;
   }
 
-  .menu li{
+  .menu li {
     flex-direction: column;
     width: 96%;
   }
@@ -1069,7 +1084,12 @@ sup {
     width: 60vw;
   }
 
-  .customer-info input, .customer-payment input, .customer-delivery input, .user-name, .sign-in input, .sign-in .button {
+  .customer-info input,
+  .customer-payment input,
+  .customer-delivery input,
+  .user-name,
+  .sign-in input,
+  .sign-in .button {
     max-width: 70%;
     align-self: center;
   }
@@ -1078,7 +1098,8 @@ sup {
     font-size: 150%;
   }
 
-  .terms, .same-as-billing {
+  .terms,
+  .same-as-billing {
     display: flex;
     width: 70%;
     height: 15vh;
@@ -1108,7 +1129,7 @@ sup {
     margin-top: 15px;
   }
 
-  .same-as-billing  label {
+  .same-as-billing label {
     align-self: center;
     margin: 0 0 0 -50vw;
     min-width: 80%;
@@ -1126,7 +1147,8 @@ sup {
     margin: 10px 0;
   }
 
-  #indoor, #outdoor {
+  #indoor,
+  #outdoor {
     margin: 0 0 -10vh 9vw;
   }
 
